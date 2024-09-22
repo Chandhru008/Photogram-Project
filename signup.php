@@ -14,7 +14,7 @@ include 'libs/load.php';
     <meta name="description" content="">
     <meta name="author" content="Selfmade Ninja Academy">
     <meta name="generator" content="Hugo 0.104.2">
-    <title>Login to Photogram</title>
+    <title>Signup to Photogram</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/album/">
 
@@ -39,7 +39,7 @@ include 'libs/load.php';
 
 <main>
 
-  <?load_template('_login');?>
+  <?load_template('_signup');?>
 
   
 
