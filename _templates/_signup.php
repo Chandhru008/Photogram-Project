@@ -1,5 +1,49 @@
+<?
+print_r($_POST);
+$signup=false;
+if(isset($_POST['username']) and isset($_POST['password']) and isset($_POST['email_address']) and isset($_POST['phone'])){
+
+$username=$_POST['username'];
+$password=$_POST['password'];
+$email=$_POST['email_address'];
+$phone=$_POST['phone'];
+$result=signup($username,$password,$email,$phone);
+$signup=true;
+
+}
+echo"hello";
+?>
+
+<?
+if($signup)
+
+{
+  if($result)
+  {
+    ?>
+  <main class="container">
+  <div class="bg-body-tertiary p-5 rounded mt-3">
+    <h1>SignUp success</h1>
+    
+  </div>
+</main> 
+  
+  <?
+  }
+  else{
+    ?>
+  <main class="container">
+  <div class="bg-body-tertiary p-5 rounded mt-3">
+    <h1>SignUp Failed</h1>
+    
+  </div>
+</main> 
+<?
+  }}
+else{
+?>
 <main class="form-signup w-100 m-auto">
-  <form method="post" action="test.php">
+  <form method="post" action="signup.php">
   <form>
     <img class="mb-4" src="https://labs.selfmade.ninja/assets/brand/logo.svg" alt=""  height="100">
     <h1 class="h3 mb-3 fw-normal">Signup Here</h1>
@@ -29,8 +73,10 @@
         Remember me
       </label>
     </div>
-    <button class="btn btn-primary w-100 py-2 hrv-grow-rotate" type="submit">Sign in</button>
+    <button class="btn btn-primary w-100 py-2 hrv-grow-rotate" type="submit">Sign up</button>
  
   </form>
 </main>
-<? 
+<?
+} 
+?>
