@@ -21,5 +21,5 @@ print("truevar:". $rightvar ."<br>\n");
 print("Falsevar:". (int)$wrongevar ."<br>\n");
 
 print("$stringvar is a type of ".gettype($stingvar)."<br>\n"); //gettype-->displays type---> int,float
-print('$stringvar is a type of '.gettpye($stringvar)." <br>\n");
+print('$stringvar is a type of '.gettype($stringvar)." <br>\n");
 ?>
