@@ -9,7 +9,10 @@ if($result)
   ?>
   <main class="container">
   <div class="bg-body-tertiary p-5 rounded mt-3">
-    <h1>Bottom LOGIN SUCCESS</h1>
+    <h1> LOGIN SUCCESS</h1>
+    <?php
+  header("Location: index.php");
+?>
     
   </div>
 </main> 

@@ -45,7 +45,7 @@ include 'libs/load.php';
 
 </main>
 
-<?load_template('_footer');
+<?//load_template('_footer');
 ?>
 
 
