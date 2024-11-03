@@ -1,9 +1,15 @@
 <?
 class user
 {
+
 public static function signup($user ,$pass , $email , $phone){
+  
+$option=[
+    'cost'=>9,    
+];
+echo password_hash($pass,PASSWORD_BCRYPT,$option);
     $conn = Database::getConnection(); 
-    $pass=md5(strrev(md5($pass)));
+    
 
 $sql = "INSERT INTO `auth` (`username`, `password`, `email`, `phone`, `blocked`, `active`)
 VALUES ('$user', '$pass', '$email', '$phone', '0', '1')";
@@ -20,14 +26,15 @@ return $result;
 }
 public static function login($user ,$pass)
 {
-  $pass=md5(strrev(md5($pass)));
+  
   $query="SELECT * FROM `auth` WHERE `username` = '$user'";
   $conn=Database::getConnection();
   $result=$conn->query($query);
   if($result->num_rows == 1)
   {
     $row =$result->fetch_assoc();
-    if($row['password']==$pass)
+    // if($row['password']==$pass)
+    if(password_verify($pass,$row['password']))
     {
       return $row;
 
