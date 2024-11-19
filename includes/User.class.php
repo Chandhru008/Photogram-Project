@@ -7,14 +7,14 @@ public static function signup($user ,$pass , $email , $phone){
 $option=[
     'cost'=>9,    
 ];
-echo password_hash($pass,PASSWORD_BCRYPT,$option);
+$pass= password_hash($pass,PASSWORD_BCRYPT,$option);
     $conn = Database::getConnection(); 
     
 
 $sql = "INSERT INTO `auth` (`username`, `password`, `email`, `phone`, `blocked`, `active`)
 VALUES ('$user', '$pass', '$email', '$phone', '0', '1')";
 
-if ($conn->query($sql) === TRUE) {
+if ($conn->query($sql) == TRUE) {
     $result = true;
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
@@ -45,4 +45,10 @@ public static function login($user ,$pass)
     return false;
   }
 }
+  public function __construct($username)
+  {
+    $this->conn = Database::getConnection();
+    $this->conn->query();
+    $this->username=$username;
+  }
 }
